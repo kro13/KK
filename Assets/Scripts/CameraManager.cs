@@ -15,7 +15,7 @@
         //unity
         void Start()
         {
-            snowBox = (ParticleSystem)transform.FindChild("SnowBox").GetComponent<ParticleSystem>();
+            snowBox = (ParticleSystem)transform.Find("SnowBox").GetComponent<ParticleSystem>();
             background = Instantiate(backgroundPrefab);
             background.transform.parent = transform;
             background.transform.localScale = new Vector3(2f, 2f, 1);
@@ -54,6 +54,7 @@
                 if (!snowBox.isPlaying)
                 {
                     snowBox.Play();
+					snowBox.Play();
                     Debug.Log("Play snow");
                 }
 

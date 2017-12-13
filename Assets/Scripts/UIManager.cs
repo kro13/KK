@@ -212,7 +212,7 @@ namespace Assets.Scripts
         {
             if (flexible)
             {
-                GameObject menuBack = transform.FindChild("MenuBack").gameObject;
+                GameObject menuBack = transform.Find("MenuBack").gameObject;
                 RectTransform menuBackTransform = menuBack.GetComponent<RectTransform>();
                 menuBackTransform.anchorMin=new Vector2(0,0);
                 menuBackTransform.anchorMax=new Vector2(1,1);

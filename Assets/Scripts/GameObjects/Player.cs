@@ -36,7 +36,16 @@ public class Player : MonoBehaviour
         if (isActive)
         {
             ReadAngle();
-            snowParticles.maxParticles = (int)body.velocity.magnitude;
+			var spMain = snowParticles.main;
+			spMain.maxParticles = (int)body.velocity.magnitude;
+			if (spMain.maxParticles == 0 && snowParticles.isPlaying) 
+			{
+				snowParticles.Stop();
+			} 
+			else if(!snowParticles.isPlaying) 
+			{
+				snowParticles.Play();
+			}
         }
     }
 

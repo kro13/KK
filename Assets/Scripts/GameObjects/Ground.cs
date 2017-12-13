@@ -25,7 +25,7 @@ namespace Assets.Scripts.GameObjects
         {
             foreach (GroundBlock block in blocksList)
             {
-                Transform snowSprite = block.transform.FindChild("Snow");
+                Transform snowSprite = block.transform.Find("Snow");
                 BoxCollider2D collider = block.gameObject.AddComponent<BoxCollider2D>();
                 collider.size = new Vector2(snowSprite.localScale.x, snowSprite.localScale.y);
                 BoxCollider2D trigger = block.gameObject.AddComponent<BoxCollider2D>();
@@ -39,7 +39,7 @@ namespace Assets.Scripts.GameObjects
             Vector3 point = new Vector3();
             if (blocksList.Count > 0)
             {
-                Transform snowSprite = blocksList[0].transform.FindChild("Snow");
+                Transform snowSprite = blocksList[0].transform.Find("Snow");
                 point = blocksList[0].transform.position + new Vector3(0, snowSprite.localScale.y / 2, 0);
             }
             return point;
@@ -50,7 +50,7 @@ namespace Assets.Scripts.GameObjects
             Vector3 point = new Vector3();
             if (blocksList.Count > 0)
             {
-                Transform snowSprite = blocksList[blocksList.Count - 1].transform.FindChild("Snow");
+                Transform snowSprite = blocksList[blocksList.Count - 1].transform.Find("Snow");
                 point = blocksList[blocksList.Count - 1].transform.position + new Vector3(0, -snowSprite.localScale.y / 2, 0);
             }
             return point;

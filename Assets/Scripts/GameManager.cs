@@ -40,12 +40,13 @@ namespace Assets.Scripts
             bool sound = false;
 
             //setup control
-#if UNITY_ANDROID//&&!UNITY_EDITOR
+#if UNITY_ANDROID&&!UNITY_EDITOR
             control = gameObject.AddComponent<GyroControl>();
             uiManager = new UIWithTaps(UIManagerFactory.getInstance().CreateBig());
 #else
             control = gameObject.AddComponent<SliderControl>();
-            uiManager = new UIWithKeyHandler(UIManagerFactory.getInstance().Create());
+           // uiManager = new UIWithKeyHandler(UIManagerFactory.getInstance().Create());
+			uiManager = new UIWithTaps(UIManagerFactory.getInstance().CreateBig());
 #endif
             control.SetSensitivity(sensitivity);
             //setup physics

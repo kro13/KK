@@ -33,7 +33,7 @@ namespace Assets.Scripts.GameObjects
 
         public void BuildFromMap(GroundBlockMap map)
         {
-            snowSprite = transform.FindChild("Snow");
+            snowSprite = transform.Find("Snow");
             snowSprite.localScale = new Vector3(map.size.x, map.size.y, 0);
             transform.localPosition = new Vector3(map.position.x + ((float)map.size.x) / 2, -map.position.y - ((float)map.size.y) / 2, 0);
             //borders

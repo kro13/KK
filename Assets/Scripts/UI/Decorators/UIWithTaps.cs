@@ -13,7 +13,7 @@ namespace Assets.Scripts.UI
 
         private void AddButtons(MonoBehaviour uiManager)
         {
-            Transform menuShortcut = uiManager.transform.FindChild("MenuShortcut");
+            Transform menuShortcut = uiManager.transform.Find("MenuShortcut");
             Button nButton = UIManagerFactory.getInstance().CreateTap();
             nButton.name = "NTap";
             nButton.GetComponentInChildren<Text>().text = "[N]";
