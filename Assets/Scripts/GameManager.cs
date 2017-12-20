@@ -97,14 +97,7 @@ namespace Assets.Scripts
                 uiManager.isFirstStart = false;
             }
 
-            if (difficulty == 2)
-            {
-                cameraManager.PlaySnow(true);
-            }
-            else
-            {
-                cameraManager.PlaySnow(false);
-            }
+			PlaySnowIfNeeded ();
 
             isFinish = false;
             Cursor.lockState = CursorLockMode.Locked;
@@ -155,10 +148,12 @@ namespace Assets.Scripts
             if (!pause)
             {
                 Cursor.lockState = CursorLockMode.Locked;
+				Screen.sleepTimeout = SleepTimeout.NeverSleep;
             }
             else
             {
                 Cursor.lockState = CursorLockMode.None;
+				Screen.sleepTimeout = SleepTimeout.SystemSetting;
             }
         }
 
@@ -181,10 +176,13 @@ namespace Assets.Scripts
 
         private void RespawnPlayer()
         {
-            score.Reset();
+			Debug.Log ("respawn");
+			score.Reset();
             player.Reset();
             player.transform.position = canyon.GetEnterPoint();
+			isFinish = false;
             PauseGame(false);
+			PlaySnowIfNeeded ();
         }
 
         private void UpdateText()
@@ -226,7 +224,7 @@ namespace Assets.Scripts
                     }
                     break;
                 case "Respawn":
-                    if (!uiManager.isFirstStart && !isFinish)
+                    if (!uiManager.isFirstStart /*&& !isFinish*/)
                     {
                         RespawnPlayer();
                         Cursor.lockState = CursorLockMode.Locked;
@@ -289,6 +287,18 @@ namespace Assets.Scripts
                     break;
             }
         }
+
+		private void PlaySnowIfNeeded()
+		{
+			if (difficulty == 2)
+			{
+				cameraManager.PlaySnow(true);
+			}
+			else
+			{
+				cameraManager.PlaySnow(false);
+			}
+		}
     }
 
 

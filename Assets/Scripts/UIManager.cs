@@ -26,6 +26,7 @@ namespace Assets.Scripts
         private Button newGame2;
         private Button resume;
         private Button respawn;
+		private Button respawn2;
         private Button options;
         private Button options2;
         private Button help;
@@ -64,7 +65,7 @@ namespace Assets.Scripts
             optsBack = optionsMenu.transform.Find("OptsBack").GetComponent<Button>();
 
             helpBack = helpMenu.transform.Find("HelpBack").GetComponent<Button>();
-
+			respawn2 = finishMenu.transform.Find("Respawn").GetComponent<Button>();
             newGame2 = finishMenu.transform.Find("NewGame").GetComponent<Button>();
             options2 = finishMenu.transform.Find("Options").GetComponent<Button>();
             quit2 = finishMenu.transform.Find("Quit").GetComponent<Button>();
@@ -77,6 +78,7 @@ namespace Assets.Scripts
             help.onClick.AddListener(() => { OnMenuClick(help); });
             quit.onClick.AddListener(() => { OnMenuClick(quit); });
             newGame2.onClick.AddListener(() => { OnMenuClick(newGame2); });
+			respawn2.onClick.AddListener(() => { OnMenuClick(respawn2); });
             quit2.onClick.AddListener(() => { OnMenuClick(quit2); });
             options2.onClick.AddListener(() => { OnMenuClick(options2); });
             toBar.onClick.AddListener(() => { OnMenuClick(toBar); });
@@ -236,7 +238,7 @@ namespace Assets.Scripts
                     eArgs = new MenuEventArgs(((Slider)menuItem).value.ToString());
                     break;
             }
-
+			Debug.Log (menuItem.name);
             FireMenuCommand(menuItem.name, eArgs);
         }
 

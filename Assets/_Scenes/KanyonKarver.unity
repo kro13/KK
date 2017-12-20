@@ -3906,8 +3906,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0bb86964968df9146badbd7df48ed399, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  uiManagerPrefab: {fileID: 11455094, guid: 992673fbc52e821468f7930f6bb38947, type: 2}
-  bigUiManagerPrefab: {fileID: 11439086, guid: b1750328044576043b232bf841fa34ec, type: 2}
+  uiManagerPrefab: {fileID: 114348825104379168, guid: 20818d4ed0608eb4eb2b1d4e9f5fd27d,
+    type: 2}
+  bigUiManagerPrefab: {fileID: 114697474930464834, guid: fab2abdf93580a74d82e51bc613fe1b9,
+    type: 2}
   tapPrefab: {fileID: 11456844, guid: 98f3f0db0796ea5439e386539f4861a3, type: 2}
 --- !u!4 &2131981820
 Transform:

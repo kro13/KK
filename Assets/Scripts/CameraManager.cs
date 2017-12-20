@@ -54,7 +54,6 @@
                 if (!snowBox.isPlaying)
                 {
                     snowBox.Play();
-					snowBox.Play();
                     Debug.Log("Play snow");
                 }
 
@@ -64,7 +63,7 @@
                 if (snowBox.isPlaying)
                 {
                     snowBox.Pause();
-                    snowBox.Clear();
+					snowBox.Clear ();
                     Debug.Log("Stop snow");
                 }
             }
